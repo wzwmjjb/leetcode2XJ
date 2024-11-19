@@ -2,7 +2,7 @@ import json
 import requests
 import time
 
-with open("problem_urls.txt", "r", encoding="utf-8") as file:
+with open("assets/chosen_urls.txt", "r", encoding="utf-8") as file:
     problem_urls = file.read().splitlines()
 
 problems_data = []
@@ -58,7 +58,7 @@ for url in problem_urls:
     except Exception as e:
         print(f"Failed to fetch data for {url}: {e}")
 
-with open("problems_data.json", "w", encoding="utf-8") as json_file:
+with open("assets/chosen_problems_raw.json", "w", encoding="utf-8") as json_file:
     json.dump(problems_data, json_file, ensure_ascii=False, indent=4)
 
-print("All problems have been saved to 'problems_data.json'")
+print("All problems have been saved to 'assets/chosen_problems_raw.json'")

@@ -1,7 +1,7 @@
 import json
 import os.path
 
-with open("chosen_problems_raw.json", "r", encoding="utf-8") as file:
+with open("assets/chosen_problems_raw.json", "r", encoding="utf-8") as file:
     problems = json.load(file)
 
 formatted_problems = []
@@ -64,7 +64,7 @@ for problem in problems:
 
     formatted_problems.append(formatted_problem)
 
-with open("chosen_problems_formatted.json", "w", encoding="utf-8") as output_file:
+with open("assets/chosen_problems_formatted.json", "w", encoding="utf-8") as output_file:
     json.dump(formatted_problems, output_file, ensure_ascii=False, indent=4)
 
-print("Formatted problems saved to 'chosen_problems_formatted.json'")
+print("Formatted problems saved to 'assets/chosen_problems_formatted.json'")
